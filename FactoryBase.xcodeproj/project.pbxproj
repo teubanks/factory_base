@@ -23,16 +23,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4044D236165AD010002CAA75 /* FactoryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D235165AD010002CAA75 /* FactoryBase.m */; };
 		4044D23D165AD010002CAA75 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1B1165AAC18002CAA75 /* SenTestingKit.framework */; };
-		4044D23E165AD010002CAA75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1F9165AB71E002CAA75 /* UIKit.framework */; };
 		4044D23F165AD010002CAA75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E9165AB71E002CAA75 /* Foundation.framework */; };
-		4044D248165AD010002CAA75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4044D246165AD010002CAA75 /* InfoPlist.strings */; };
-		4044D24B165AD010002CAA75 /* FactoryBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D24A165AD010002CAA75 /* FactoryBaseTests.m */; };
 		40BE2DAC165AD3A300F3BAC2 /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */; };
 		40BE2DAF165AD72600F3BAC2 /* NSDictionary+Merge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */; };
 		40BE2DB0165AD72600F3BAC2 /* FactoryBase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044D1A8165AAC18002CAA75 /* FactoryBase.h */; };
 		40BE2DB2165ADADA00F3BAC2 /* libFactoryBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D22E165AD010002CAA75 /* libFactoryBase.a */; };
+		40BE2DB6165ADCEC00F3BAC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E9165AB71E002CAA75 /* Foundation.framework */; };
+		40BE2DB7165ADD0500F3BAC2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D19F165AAC18002CAA75 /* CoreData.framework */; };
+		40BE2DB9165ADD4B00F3BAC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BE2DB8165ADD4B00F3BAC2 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +59,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4044D19B165AAC18002CAA75 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4044D19E165AAC18002CAA75 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4044D19F165AAC18002CAA75 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4044D1A0165AAC18002CAA75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4044D1A3165AAC18002CAA75 /* FactoryBase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FactoryBase-Info.plist"; sourceTree = "<group>"; };
@@ -77,23 +74,9 @@
 		4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Merge.h"; sourceTree = "<group>"; };
 		4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Merge.m"; sourceTree = "<group>"; };
 		4044D1E9165AB71E002CAA75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4044D1ED165AB71E002CAA75 /* FactoryBase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FactoryBase-Prefix.pch"; sourceTree = "<group>"; };
-		4044D1EE165AB71E002CAA75 /* FactoryBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryBase.h; sourceTree = "<group>"; };
-		4044D1F0165AB71E002CAA75 /* FactoryBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryBase.m; sourceTree = "<group>"; };
-		4044D1F9165AB71E002CAA75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		4044D201165AB71E002CAA75 /* FactoryBaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FactoryBaseTests-Info.plist"; sourceTree = "<group>"; };
-		4044D203165AB71E002CAA75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4044D205165AB71E002CAA75 /* FactoryBaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryBaseTests.h; sourceTree = "<group>"; };
-		4044D206165AB71E002CAA75 /* FactoryBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryBaseTests.m; sourceTree = "<group>"; };
 		4044D22E165AD010002CAA75 /* libFactoryBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFactoryBase.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4044D232165AD010002CAA75 /* FactoryBase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FactoryBase-Prefix.pch"; sourceTree = "<group>"; };
-		4044D233165AD010002CAA75 /* FactoryBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryBase.h; sourceTree = "<group>"; };
-		4044D235165AD010002CAA75 /* FactoryBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryBase.m; sourceTree = "<group>"; };
 		4044D23C165AD010002CAA75 /* FactoryBaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FactoryBaseTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4044D245165AD010002CAA75 /* FactoryBaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FactoryBaseTests-Info.plist"; sourceTree = "<group>"; };
-		4044D247165AD010002CAA75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4044D249165AD010002CAA75 /* FactoryBaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryBaseTests.h; sourceTree = "<group>"; };
-		4044D24A165AD010002CAA75 /* FactoryBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryBaseTests.m; sourceTree = "<group>"; };
+		40BE2DB8165ADD4B00F3BAC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BE2DB9165ADD4B00F3BAC2 /* UIKit.framework in Frameworks */,
+				40BE2DB7165ADD0500F3BAC2 /* CoreData.framework in Frameworks */,
+				40BE2DB6165ADCEC00F3BAC2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4044D23D165AD010002CAA75 /* SenTestingKit.framework in Frameworks */,
-				4044D23E165AD010002CAA75 /* UIKit.framework in Frameworks */,
 				4044D23F165AD010002CAA75 /* Foundation.framework in Frameworks */,
 				40BE2DB2165ADADA00F3BAC2 /* libFactoryBase.a in Frameworks */,
 			);
@@ -123,10 +108,6 @@
 			children = (
 				4044D1A1165AAC18002CAA75 /* FactoryBase */,
 				4044D1B7165AAC18002CAA75 /* FactoryBaseTests */,
-				4044D1EB165AB71E002CAA75 /* FactoryBase */,
-				4044D1FF165AB71E002CAA75 /* FactoryBaseTests */,
-				4044D230165AD010002CAA75 /* FactoryBase */,
-				4044D243165AD010002CAA75 /* FactoryBaseTests */,
 				4044D19A165AAC18002CAA75 /* Frameworks */,
 				4044D199165AAC18002CAA75 /* Products */,
 			);
@@ -144,10 +125,9 @@
 		4044D19A165AAC18002CAA75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4044D19B165AAC18002CAA75 /* Cocoa.framework */,
+				40BE2DB8165ADD4B00F3BAC2 /* UIKit.framework */,
 				4044D1B1165AAC18002CAA75 /* SenTestingKit.framework */,
 				4044D1E9165AB71E002CAA75 /* Foundation.framework */,
-				4044D1F9165AB71E002CAA75 /* UIKit.framework */,
 				4044D19D165AAC18002CAA75 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -156,7 +136,6 @@
 		4044D19D165AAC18002CAA75 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4044D19E165AAC18002CAA75 /* AppKit.framework */,
 				4044D19F165AAC18002CAA75 /* CoreData.framework */,
 				4044D1A0165AAC18002CAA75 /* Foundation.framework */,
 			);
@@ -210,80 +189,6 @@
 				4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		4044D1EB165AB71E002CAA75 /* FactoryBase */ = {
-			isa = PBXGroup;
-			children = (
-				4044D1EE165AB71E002CAA75 /* FactoryBase.h */,
-				4044D1F0165AB71E002CAA75 /* FactoryBase.m */,
-				4044D1EC165AB71E002CAA75 /* Supporting Files */,
-			);
-			path = FactoryBase;
-			sourceTree = "<group>";
-		};
-		4044D1EC165AB71E002CAA75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4044D1ED165AB71E002CAA75 /* FactoryBase-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4044D1FF165AB71E002CAA75 /* FactoryBaseTests */ = {
-			isa = PBXGroup;
-			children = (
-				4044D205165AB71E002CAA75 /* FactoryBaseTests.h */,
-				4044D206165AB71E002CAA75 /* FactoryBaseTests.m */,
-				4044D200165AB71E002CAA75 /* Supporting Files */,
-			);
-			path = FactoryBaseTests;
-			sourceTree = "<group>";
-		};
-		4044D200165AB71E002CAA75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4044D201165AB71E002CAA75 /* FactoryBaseTests-Info.plist */,
-				4044D202165AB71E002CAA75 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4044D230165AD010002CAA75 /* FactoryBase */ = {
-			isa = PBXGroup;
-			children = (
-				4044D233165AD010002CAA75 /* FactoryBase.h */,
-				4044D235165AD010002CAA75 /* FactoryBase.m */,
-				4044D231165AD010002CAA75 /* Supporting Files */,
-			);
-			path = FactoryBase;
-			sourceTree = "<group>";
-		};
-		4044D231165AD010002CAA75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4044D232165AD010002CAA75 /* FactoryBase-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4044D243165AD010002CAA75 /* FactoryBaseTests */ = {
-			isa = PBXGroup;
-			children = (
-				4044D249165AD010002CAA75 /* FactoryBaseTests.h */,
-				4044D24A165AD010002CAA75 /* FactoryBaseTests.m */,
-				4044D244165AD010002CAA75 /* Supporting Files */,
-			);
-			path = FactoryBaseTests;
-			sourceTree = "<group>";
-		};
-		4044D244165AD010002CAA75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4044D245165AD010002CAA75 /* FactoryBaseTests-Info.plist */,
-				4044D246165AD010002CAA75 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4044D248165AD010002CAA75 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BE2DAC165AD3A300F3BAC2 /* NSDictionary+Merge.m in Sources */,
-				4044D236165AD010002CAA75 /* FactoryBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4044D24B165AD010002CAA75 /* FactoryBaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,22 +350,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4044D1BB165AAC18002CAA75 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4044D202165AB71E002CAA75 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4044D203165AB71E002CAA75 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4044D246165AD010002CAA75 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4044D247165AD010002CAA75 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
