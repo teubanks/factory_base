@@ -31,10 +31,7 @@ static FactoryBase *_localInstance;
 +(void)initialize {
     _localInstance = [[self alloc] init];
 
-    Class dataSupportClass = NSClassFromString(@"DataSupport");
-    if(!dataSupportClass) {
-        [NSException raise:@"Expected DataSupport class to be defined" format:@""];
-    }
+    Class dataSupportClass = [self classFromString:@"DataSupport"];
     SEL mainContextSel = @selector(mainManagedObjectContext);
     if([dataSupportClass respondsToSelector:mainContextSel]) {
         _localInstance.context = [dataSupportClass performSelector:mainContextSel];
@@ -98,14 +95,23 @@ static FactoryBase *_localInstance;
 
 -(id)associationWithName:(NSString*)associationName {
     NSString *associationFactoryName = [NSString stringWithFormat:@"%@Factory", associationName];
-    id associationFactory = NSClassFromString(associationFactoryName);
+    id associationFactory = [[self class] classFromString:associationFactoryName];
     return [associationFactory create];
 }
 
 -(id)associationWithName:(NSString*)associationName andAttributes:(NSDictionary *)associationAttributes {
     NSString *associationFactoryName = [NSString stringWithFormat:@"%@Factory", associationName];
-    id associationFactory = NSClassFromString(associationFactoryName);
+    id associationFactory = [[self class] classFromString:associationFactoryName];
     return [associationFactory createWithDictionary:associationAttributes];
+}
+
+#pragma mark Utility Methods
++(Class)classFromString:(NSString*)className {
+    Class expectedClass = NSClassFromString(className);
+    if(!expectedClass) {
+        [NSException raise:@"Class not found" format:@"Expected %@ to be defined", className];
+    }
+    return expectedClass;
 }
 
 #pragma mark Core Methods
