@@ -15,6 +15,9 @@
 		4044D1B6165AAC18002CAA75 /* FactoryBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D198165AAC18002CAA75 /* FactoryBase.framework */; };
 		4044D1BC165AAC18002CAA75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4044D1BA165AAC18002CAA75 /* InfoPlist.strings */; };
 		4044D1BF165AAC18002CAA75 /* FactoryBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D1BE165AAC18002CAA75 /* FactoryBaseTests.m */; };
+		4044D1CB165AAC73002CAA75 /* NSDictionary+Merge.h in Headers */ = {isa = PBXBuildFile; fileRef = 4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */; };
+		4044D1CC165AAC73002CAA75 /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */; };
+		4044D1CD165AAC73002CAA75 /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,8 @@
 		4044D1BB165AAC18002CAA75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4044D1BD165AAC18002CAA75 /* FactoryBaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryBaseTests.h; sourceTree = "<group>"; };
 		4044D1BE165AAC18002CAA75 /* FactoryBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryBaseTests.m; sourceTree = "<group>"; };
+		4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Merge.h"; sourceTree = "<group>"; };
+		4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Merge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 		4044D1A1165AAC18002CAA75 /* FactoryBase */ = {
 			isa = PBXGroup;
 			children = (
+				4044D1C8165AAC5C002CAA75 /* Categories */,
 				4044D1A8165AAC18002CAA75 /* FactoryBase.h */,
 				4044D1A9165AAC18002CAA75 /* FactoryBase.m */,
 				4044D1A2165AAC18002CAA75 /* Supporting Files */,
@@ -146,6 +152,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4044D1C8165AAC5C002CAA75 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */,
+				4044D1CA165AAC73002CAA75 /* NSDictionary+Merge.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -153,6 +168,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4044D1CB165AAC73002CAA75 /* NSDictionary+Merge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4044D1AA165AAC18002CAA75 /* FactoryBase.m in Sources */,
+				4044D1CC165AAC73002CAA75 /* NSDictionary+Merge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4044D1BF165AAC18002CAA75 /* FactoryBaseTests.m in Sources */,
+				4044D1CD165AAC73002CAA75 /* NSDictionary+Merge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
