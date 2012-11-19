@@ -1,9 +1,8 @@
 //
 //  FactoryBase.m
-//  Finance
 //
 //  Created by Tracey Eubanks on 11/16/12.
-//  Copyright (c) 2012 MoneyDesktop. All rights reserved.
+//  Copyright (c) 2012 Tracey Eubanks. All rights reserved.
 //
 //  FactoryBase provides a way to dynamically create entities based on
 //  information provided by the defaultDictionary instance method.
@@ -17,6 +16,9 @@
 //
 //  Custom dictionaries and the defaultDictionary are merged, removing the need to
 //  pass in all keys along with custom overrides
+//
+//  This class expects a class called DataSupport to be defined with a class method
+//  named mainManagedObjectContext that returns an NSManagedObjectContext
 
 #import "NSDictionary+Merge.h"
 #import "FactoryBase.h"

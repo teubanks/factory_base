@@ -1,9 +1,8 @@
 //
 //  NSDictionary+Merge.m
-//  Finance
 //
 //  Created by Tracey Eubanks on 11/16/12.
-//  Copyright (c) 2012 DataReef. All rights reserved.
+//  Copyright (c) 2012 Tracey Eubanks. All rights reserved.
 //
 
 #import "NSDictionary+Merge.h"
