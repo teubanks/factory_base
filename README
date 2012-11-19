@@ -1,0 +1,16 @@
+FactoryBase provides a way to dynamically create entities based on
+information provided by the defaultDictionary instance method.
+
+Subclasses must have their names prefixed with the entity name (eg, UserFactory
+for a User entity). FactoryBase dynamically discovers the entity name based
+on its class name.
+
+FactoryBase allows for overriding the existing default dictionary by passing
+a custom dictionary to the createWithDictionary or buildWithDictionary methods
+
+Custom dictionaries and the defaultDictionary are merged, removing the need to
+pass in all keys along with custom overrides
+
+This class expects a class called DataSupport to be defined with a class method
+named mainManagedObjectContext that returns an NSManagedObjectContext
+
