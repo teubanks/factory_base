@@ -66,8 +66,8 @@ static FactoryBase *_localInstance;
 -(id)create {
     id newEntity = [self buildEntityForName:self.entityName withDictionary:nil];
     __block NSError *saveError = nil;
-    [[self context] performBlock:^{
-        [[self context] save:&saveError];
+    [self.context performBlock:^{
+        [self.context save:&saveError];
     }];
     assert(saveError == nil);
     return newEntity;
@@ -81,8 +81,8 @@ static FactoryBase *_localInstance;
 -(id)createWithDictionary:(NSDictionary *)entityDic {
     id newEntity = [self buildEntityForName:self.entityName withDictionary:entityDic];
     __block NSError *saveError = nil;
-    [[self context] performBlock:^{
-        [[self context] save:&saveError];
+    [self.context performBlock:^{
+        [self.context save:&saveError];
     }];
     assert(saveError == nil);
     return newEntity;
@@ -120,7 +120,9 @@ static FactoryBase *_localInstance;
     if(entityDic != nil) {
         fullDictionary = [fullDictionary dictionaryByMergingWith:entityDic];
     }
-    NSEntityDescription *entityDesc = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.context];
+    [self.context performBlockAndWait:^{
+        NSEntityDescription *entityDesc = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.context];
+    }]
 
     [fullDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [entityDesc setValue:obj forKey:key];
