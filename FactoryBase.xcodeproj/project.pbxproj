@@ -31,7 +31,7 @@
 		40BE2DB2165ADADA00F3BAC2 /* libFactoryBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D22E165AD010002CAA75 /* libFactoryBase.a */; };
 		40BE2DB6165ADCEC00F3BAC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E9165AB71E002CAA75 /* Foundation.framework */; };
 		40BE2DB7165ADD0500F3BAC2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D19F165AAC18002CAA75 /* CoreData.framework */; };
-		40BE2DB9165ADD4B00F3BAC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BE2DB8165ADD4B00F3BAC2 /* UIKit.framework */; };
+		40BE2DCC165AE21D00F3BAC2 /* FactoryBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4044D1A8165AAC18002CAA75 /* FactoryBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40BE2DB9165ADD4B00F3BAC2 /* UIKit.framework in Frameworks */,
 				40BE2DB7165ADD0500F3BAC2 /* CoreData.framework in Frameworks */,
 				40BE2DB6165ADCEC00F3BAC2 /* Foundation.framework in Frameworks */,
 			);
@@ -193,11 +192,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		40BE2DCB165AE21500F3BAC2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40BE2DCC165AE21D00F3BAC2 /* FactoryBase.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		4044D22D165AD010002CAA75 /* FactoryBase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4044D24C165AD010002CAA75 /* Build configuration list for PBXNativeTarget "FactoryBase" */;
 			buildPhases = (
+				40BE2DCB165AE21500F3BAC2 /* Headers */,
 				4044D22A165AD010002CAA75 /* Sources */,
 				4044D22B165AD010002CAA75 /* Frameworks */,
 			);
