@@ -32,6 +32,8 @@
 		40BE2DB6165ADCEC00F3BAC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E9165AB71E002CAA75 /* Foundation.framework */; };
 		40BE2DB7165ADD0500F3BAC2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D19F165AAC18002CAA75 /* CoreData.framework */; };
 		40BE2DCC165AE21D00F3BAC2 /* FactoryBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4044D1A8165AAC18002CAA75 /* FactoryBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40BE2E10165AEAC300F3BAC2 /* FactoryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D1A9165AAC18002CAA75 /* FactoryBase.m */; };
+		40BE2E11165AEACC00F3BAC2 /* NSDictionary+Merge.h in Headers */ = {isa = PBXBuildFile; fileRef = 4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BE2DCC165AE21D00F3BAC2 /* FactoryBase.h in Headers */,
+				40BE2E11165AEACC00F3BAC2 /* NSDictionary+Merge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BE2E10165AEAC300F3BAC2 /* FactoryBase.m in Sources */,
 				40BE2DAC165AD3A300F3BAC2 /* NSDictionary+Merge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +432,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = FactoryBasePublicHeaders;
 				SDKROOT = iphoneos;
@@ -445,7 +448,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = FactoryBasePublicHeaders;
 				SDKROOT = iphoneos;
