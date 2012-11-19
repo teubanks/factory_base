@@ -6,6 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4044D218165AB8E3002CAA75 /* FactoryBase-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4044D219165AB8E3002CAA75 /* Build configuration list for PBXAggregateTarget "FactoryBase-iOS" */;
+			buildPhases = (
+				4044D21C165AB8F7002CAA75 /* Build Library */,
+				4044D21D165AB91F002CAA75 /* Assemble Framework */,
+				4044D21E165AB93B002CAA75 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = "FactoryBase-iOS";
+			productName = "FactoryBase-iOS";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4044D1EA165AB71E002CAA75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E9165AB71E002CAA75 /* Foundation.framework */; };
 		4044D1EF165AB71E002CAA75 /* FactoryBase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044D1EE165AB71E002CAA75 /* FactoryBase.h */; };
@@ -16,6 +32,8 @@
 		4044D1FE165AB71E002CAA75 /* libFactoryBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4044D1E8165AB71E002CAA75 /* libFactoryBase.a */; };
 		4044D204165AB71E002CAA75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4044D202165AB71E002CAA75 /* InfoPlist.strings */; };
 		4044D207165AB71E002CAA75 /* FactoryBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044D206165AB71E002CAA75 /* FactoryBaseTests.m */; };
+		4044D21F165AB958002CAA75 /* NSDictionary+Merge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044D1C9165AAC73002CAA75 /* NSDictionary+Merge.h */; };
+		4044D220165AB958002CAA75 /* FactoryBase.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4044D1A8165AAC18002CAA75 /* FactoryBase.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +54,17 @@
 			dstSubfolderSpec = 16;
 			files = (
 				4044D1EF165AB71E002CAA75 /* FactoryBase.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4044D21E165AB93B002CAA75 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Versions/A/Headers/";
+			dstSubfolderSpec = 0;
+			files = (
+				4044D21F165AB958002CAA75 /* NSDictionary+Merge.h in CopyFiles */,
+				4044D220165AB958002CAA75 /* FactoryBase.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,22 +254,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		4044D20E165AB742002CAA75 /* FactoryBase-iOS */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 4044D20F165AB742002CAA75 /* Build configuration list for PBXLegacyTarget "FactoryBase-iOS" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			dependencies = (
-			);
-			name = "FactoryBase-iOS";
-			passBuildSettingsInEnvironment = 1;
-			productName = "FactoryBase-iOS";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		4044D1E7165AB71E002CAA75 /* FactoryBase */ = {
 			isa = PBXNativeTarget;
@@ -301,7 +314,7 @@
 			targets = (
 				4044D1E7165AB71E002CAA75 /* FactoryBase */,
 				4044D1F6165AB71E002CAA75 /* FactoryBaseTests */,
-				4044D20E165AB742002CAA75 /* FactoryBase-iOS */,
+				4044D218165AB8E3002CAA75 /* FactoryBase-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +343,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		4044D21C165AB8F7002CAA75 /* Build Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Library";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build";
+		};
+		4044D21D165AB91F002CAA75 /* Assemble Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Assemble Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\n\n# Generate universal binary from desktop, device, and simulator builds.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\" &&\ncp \"${SRCROOT}/FactoryBase-Info.plist\" \"${FRAMEWORK}/Resources/Info.plist\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -505,23 +546,16 @@
 			};
 			name = Release;
 		};
-		4044D210165AB742002CAA75 /* Debug */ = {
+		4044D21A165AB8E3002CAA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEBUGGING_SYMBOLS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		4044D211165AB742002CAA75 /* Release */ = {
+		4044D21B165AB8E3002CAA75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -554,11 +588,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		4044D20F165AB742002CAA75 /* Build configuration list for PBXLegacyTarget "FactoryBase-iOS" */ = {
+		4044D219165AB8E3002CAA75 /* Build configuration list for PBXAggregateTarget "FactoryBase-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4044D210165AB742002CAA75 /* Debug */,
-				4044D211165AB742002CAA75 /* Release */,
+				4044D21A165AB8E3002CAA75 /* Debug */,
+				4044D21B165AB8E3002CAA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
