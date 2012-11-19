@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FactoryBase' target in the 'FactoryBase' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
