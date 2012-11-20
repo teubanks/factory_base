@@ -31,7 +31,7 @@
     self = [super init];
 
     Class dataSupportClass = [[self class] classFromString:@"DataSupport"];
-    SEL mainContextSel = @selector(mainManagedObjectContext);
+    SEL mainContextSel = @selector(dataSupportManagedObjectContext);
     if([dataSupportClass respondsToSelector:mainContextSel]) {
         self.context = [dataSupportClass performSelector:mainContextSel];
     } else {
@@ -70,7 +70,7 @@
 -(id)create {
     id newEntity = [self buildEntityForName:self.entityName withDictionary:nil];
     __block NSError *saveError = nil;
-    [self.context performBlock:^{
+    [self.context performBlockAndWait:^{
         [self.context save:&saveError];
     }];
     assert(saveError == nil);
@@ -85,7 +85,7 @@
 -(id)createWithDictionary:(NSDictionary *)entityDic {
     id newEntity = [self buildEntityForName:self.entityName withDictionary:entityDic];
     __block NSError *saveError = nil;
-    [self.context performBlock:^{
+    [self.context performBlockAndWait:^{
         [self.context save:&saveError];
     }];
     assert(saveError == nil);
