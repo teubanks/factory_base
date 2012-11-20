@@ -19,6 +19,8 @@
             } else {
                 [result setObject: obj forKey: key];
             }
+        } else {
+            [result setObject:obj forKey:key];
         }
     }];
 

@@ -22,22 +22,22 @@
 
 #import "NSDictionary+Merge.h"
 #import "FactoryBase.h"
-static FactoryBase *_localInstance;
 @interface FactoryBase()
 
 @end
 
 @implementation FactoryBase
-+(void)initialize {
-    _localInstance = [[self alloc] init];
+-(id)init {
+    self = [super init];
 
-    Class dataSupportClass = [self classFromString:@"DataSupport"];
+    Class dataSupportClass = [[self class] classFromString:@"DataSupport"];
     SEL mainContextSel = @selector(mainManagedObjectContext);
     if([dataSupportClass respondsToSelector:mainContextSel]) {
-        _localInstance.context = [dataSupportClass performSelector:mainContextSel];
+        self.context = [dataSupportClass performSelector:mainContextSel];
     } else {
         [NSException raise:@"Selector mainManagedObjectContext for class DataSupport not defined" format:@"Expected %@ to be defined on class DataSupport", NSStringFromSelector(mainContextSel)];
     }
+    return self;
 }
 
 -(NSString*)entityName {
@@ -47,19 +47,23 @@ static FactoryBase *_localInstance;
 
 #pragma mark Public Methods
 +(id)create {
-    return [_localInstance create];
+    id localInstance = [[self alloc] init];
+    return [localInstance create];
 }
 
 +(id)build {
-    return [_localInstance build];
+    id localInstance = [[self alloc] init];
+    return [localInstance build];
 }
 
 +(id)createWithDictionary:(NSDictionary *)entityDic {
-    return [_localInstance createWithDictionary:entityDic];
+    id localInstance = [[self alloc] init];
+    return [localInstance createWithDictionary:entityDic];
 }
 
 +(id)buildWithDictionary:(NSDictionary *)entityDic {
-    return [_localInstance buildWithDictionary:entityDic];
+    id localInstance = [[self alloc] init];
+    return [localInstance buildWithDictionary:entityDic];
 }
 
 #pragma mark Private Instance Methods
@@ -120,9 +124,10 @@ static FactoryBase *_localInstance;
     if(entityDic != nil) {
         fullDictionary = [fullDictionary dictionaryByMergingWith:entityDic];
     }
+    __block NSEntityDescription *entityDesc = nil;
     [self.context performBlockAndWait:^{
-        NSEntityDescription *entityDesc = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.context];
-    }]
+        entityDesc = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.context];
+    }];
 
     [fullDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [entityDesc setValue:obj forKey:key];
