@@ -16,4 +16,5 @@
 +(id)buildWithDictionary:(NSDictionary *)entityDic;
 -(id)associationWithName:(NSString*)associationName;
 -(id)associationWithName:(NSString*)associationName andAttributes:(NSDictionary *)associationAttributes;
+-(NSDictionary*)defaultDictionary;
 @end
