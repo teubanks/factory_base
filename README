@@ -14,3 +14,4 @@ pass in all keys along with custom overrides
 This class expects a class called DataSupport to be defined with a class method
 named mainManagedObjectContext that returns an NSManagedObjectContext
 
+Generate a static library or include this project as a subproject
